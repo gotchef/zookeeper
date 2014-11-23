@@ -2,19 +2,16 @@
 # Set attributes for dependant nodes that are currently online at the time this recipe was run
 #  - if a node is not online it will get missed, this is a problem
 
-layer_name = node[:zookeeper][:aws][:layer]
-instances = node[:opsworks][:layers][layer_name][:instances]
+instances = node[:opsworks][:layers]['zookeeper'][:instances]
 
-Chef::Log.debug("For #{layer_name} found #{instances} ")
+
+Chef::Log.info("For #{instances.length} found ")
 hosts = []
 instances.each do |name, instance| 
 	hosts.push(instance[:private_ip])
 end
 
-Chef::Log.debug("For #{hosts} found ")
+Chef::Log.info("For #{hosts} found ")
 node.normal[:zookeeper][:nodes] = hosts
 
-if hosts.length == 0
-Chef::Application.fatal!("No hosts", 42) if hosts.length == 0
-end
 
