@@ -4,6 +4,16 @@
 
 instances = node[:opsworks][:layers]['zookeeper'][:instances]
 
+layers = node[:opsworks][:layers]
+
+layers.each do |k, v| 
+	
+	Chef::Log.info("Layer #{k} found ")
+	inst = v[:instances]
+	inst.each do |a,b|
+		Chef::Log.info("instance #{a} found ")
+	end
+end
 
 Chef::Log.info("For #{instances.length} found ")
 hosts = []
