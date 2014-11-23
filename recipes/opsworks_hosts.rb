@@ -7,7 +7,7 @@ instances = node[:opsworks][:layers][layer_name][:instances]
 
 hosts = []
 instances.each do |name, instance| 
-	hosts.push("#{instance[:private_ip]}")
+	hosts.push(instance[:private_ip])
 end
 
 node.normal[:zookeeper][:nodes] = hosts
