@@ -11,3 +11,7 @@ end
 
 node.normal[:zookeeper][:nodes] = hosts
 
+if hosts.length == 0
+Chef::Application.fatal!("No hosts", 42) if zookeeper_hosts.length == 0
+end
+
