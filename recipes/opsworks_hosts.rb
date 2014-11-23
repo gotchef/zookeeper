@@ -2,7 +2,8 @@
 # Set attributes for dependant nodes that are currently online at the time this recipe was run
 #  - if a node is not online it will get missed, this is a problem
 
-instances = node[:opsworks][:layers]['zookeeper'][:instances]
+layer_name = node[:zookeeper][:aws][:layer]
+instances = node[:opsworks][:layers][layer_name][:instances]
 
 hosts = []
 instances.each do |name, instance| 

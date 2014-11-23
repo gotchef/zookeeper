@@ -8,6 +8,8 @@ default[:zookeeper][:mirror]      = 'http://apache.osuosl.org/zookeeper'
 # One of: 'runit', 'exhibitor'
 default[:zookeeper][:service_style] = 'runit'
 
+default[:zookeeper][:aws][:layer] = 'zookeeper'
+
 #
 # user
 #
