@@ -11,6 +11,7 @@ instances.each do |name, instance|
 	hosts.push(instance[:private_ip])
 end
 
+Chef::Log.debug("For #{hosts} found ")
 node.normal[:zookeeper][:nodes] = hosts
 
 if hosts.length == 0
