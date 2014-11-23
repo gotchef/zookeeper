@@ -5,6 +5,7 @@
 layer_name = node[:zookeeper][:aws][:layer]
 instances = node[:opsworks][:layers][layer_name][:instances]
 
+Chef::Log.debug("For #{layer_name} found #{instances} ")
 hosts = []
 instances.each do |name, instance| 
 	hosts.push(instance[:private_ip])
