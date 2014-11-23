@@ -7,8 +7,6 @@ include_recipe 'zookeeper::opsworks_hosts'
 
 zookeeper_hosts = node[:zookeeper][:nodes] 
 
-Chef::Application.fatal!("No hosts", 42) if zookeeper_hosts.length == 0
-
 runit_service 'zookeeper' do
     action :nothing
 end
