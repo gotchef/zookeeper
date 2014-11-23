@@ -73,3 +73,5 @@ end
 link  "#{node[:zookeeper][:conf_link_dir]}/#{logConfig}" do
 	to logPath	
 end
+
+include_recipe 'zookeeper::service'
