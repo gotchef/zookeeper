@@ -2,12 +2,12 @@
 # Set attributes for dependant nodes that are currently online at the time this recipe was run
 #  - if a node is not online it will get missed, this is a problem
 
-instances = node[:opsworks][:layers]['zookeeper'][:instances]
+zookeeper_layer_name = node[:zookeeper][:aws][:layer] = 'zookeeper'
+instances = node[:opsworks][:layers][zookeeper_layer_name][:instances]
 
+#debug code
 layers = node[:opsworks][:layers]
-
 layers.each do |k, v| 
-	
 	Chef::Log.info("Layer #{k} found ")
 	inst = v[:instances]
 	inst.each do |a,b|
