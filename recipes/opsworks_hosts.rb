@@ -2,7 +2,7 @@
 # Set attributes for dependant nodes that are currently online at the time this recipe was run
 #  - if a node is not online it will get missed, this is a problem
 
-zookeeper_layer_name = node[:zookeeper][:aws][:layer] = 'zookeeper'
+zookeeper_layer_name = node[:zookeeper][:aws][:layer] 
 instances = node[:opsworks][:layers][zookeeper_layer_name][:instances]
 
 #debug code
