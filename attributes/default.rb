@@ -46,12 +46,12 @@ default[:zookeeper][:nodes] = {
 # the length of a single tick, which is the basic time unit used by ZooKeeper,
 # as measured in milliseconds. It is used to regulate heartbeats, and
 # timeouts. For example, the minimum session timeout will be two ticks.
-default[:zookeeper][:tick_time] = 2000
+default[:zookeeper][:tick_time] = 4000
 
 # ZooKeeper logs transactions to a transaction log. After snapCount transactions
 # are written to a log file a snapshot is started and a new transaction log file
 # is created. The default snapCount is 100,000.
-default[:zookeeper][:snapshot_trigger] = 100_000
+default[:zookeeper][:snapshot_trigger] = 10000
 
 # Limits the number of concurrent connections (at the socket level) that a
 # single client, identified by IP address, may make to a single member of the
@@ -64,11 +64,11 @@ default[:zookeeper][:max_client_connections] = 300
 
 # Time, in ticks, to allow followers to connect and sync to a leader. Increase
 # if the amount of data managed by ZooKeeper is large
-default[:zookeeper][:initial_timeout_ticks] = 10
+default[:zookeeper][:initial_timeout_ticks] = 20
 
 # Time, in ticks, to allow followers to sync with ZooKeeper. If followers fall
 # too far behind a leader, they will be dropped.
-default[:zookeeper][:sync_timeout_ticks] = 5
+default[:zookeeper][:sync_timeout_ticks] = 10
 
 # Should the leader accepts client connections? default "yes".  The leader
 # machine coordinates updates. For higher update throughput at thes slight
@@ -79,4 +79,4 @@ default[:zookeeper][:sync_timeout_ticks] = 5
 #
 # "auto" means "true if there are 4 or more zookeepers, false otherwise"
 #
-default[:zookeeper][:leader_is_also_server]  = 'yes'
+default[:zookeeper][:leader_is_also_server]  = 'no'
