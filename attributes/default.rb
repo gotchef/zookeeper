@@ -1,9 +1,9 @@
 # attributes/default.rb
 
 # Install Info
-default[:zookeeper][:version]     = '3.4.6'
-default[:zookeeper][:checksum]    = '01b3938547cd620dc4c93efe07c0360411f4a66962a70500b163b59014046994'
-default[:zookeeper][:mirror]      = 'http://apache.osuosl.org/zookeeper'
+default[:zookeeper][:version]     = '3.3.6'
+default[:zookeeper][:checksum]    = 'eb311ec0479a9447d075a20350ecfc5cf6a2a6d9842d13b59d7548430ac37521'
+default[:zookeeper][:mirror]      = 'http://download.nextag.com/apache/zookeeper'
 
 # One of: 'runit', 'exhibitor'
 default[:zookeeper][:service_style] = 'runit'
