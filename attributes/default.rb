@@ -36,7 +36,7 @@ default[:zookeeper][:election_port]          = '3888'
 
 default[:zookeeper][:env_vars] = {
 	"JAVA_OPTS" => "-Xms128M -Xmx512M",
-	"ZOO_LOG4J_PROP"=>"INFO,ROLLINGFILE"
+	"ZOO_LOG4J_PROP" => "INFO,ROLLINGFILE"
 }
 
 

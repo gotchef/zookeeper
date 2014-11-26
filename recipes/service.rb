@@ -13,10 +13,11 @@ when 'runit'
   runit_service 'zookeeper' do
     default_logger true
 	sv_timeout 180
-    options({
+	env default[:zookeeper][:env_vars]
+	options({
       exec: executable_path
     })
-    action [:enable, :start]
+    action :enable
   end
 when 'exhibitor'
   Chef::Log.info("Assuming Exhibitor will start up Zookeeper.")
