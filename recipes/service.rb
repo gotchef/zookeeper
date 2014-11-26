@@ -12,6 +12,7 @@ case node[:zookeeper][:service_style]
 when 'runit'
   runit_service 'zookeeper' do
     default_logger true
+	sv_timeout 180
     options({
       exec: executable_path
     })
