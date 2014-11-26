@@ -13,7 +13,7 @@ when 'runit'
   runit_service 'zookeeper' do
     default_logger true
 	sv_timeout 180
-	env default[:zookeeper][:env_vars]
+	env node[:zookeeper][:env_vars]
 	options({
       exec: executable_path
     })
