@@ -35,3 +35,9 @@ dataLogDir=<%=     @zookeeper[:journal_dir] %>
 
 # the port at which the clients will connect
 clientPort=<%=     @zookeeper[:client_port] %>
+
+cnxTimeout=<%= @zookeeper[:cnxTimeout]%>
+
+#tcp
+electionAlg=3
+
