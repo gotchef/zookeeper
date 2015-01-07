@@ -63,10 +63,10 @@ default[:zookeeper][:snapshot_trigger] = 10000
 # single client, identified by IP address, may make to a single member of the
 # ZooKeeper ensemble. This is used to prevent certain classes of DoS attacks,
 # including file descriptor exhaustion. The zookeeper default is 60; this file
-# bumps that to 300, but you will want to turn this up even more on a production
+# bumps that to 1000, but you will want to turn this up even more on a production
 # machine. Setting this to 0 entirely removes the limit on concurrent
 # connections.
-default[:zookeeper][:max_client_connections] = 300
+default[:zookeeper][:max_client_connections] = 1000
 
 # Time, in ticks, to allow followers to connect and sync to a leader. Increase
 # if the amount of data managed by ZooKeeper is large
@@ -85,7 +85,7 @@ default[:zookeeper][:sync_timeout_ticks] = 100
 #
 # "auto" means "true if there are 4 or more zookeepers, false otherwise"
 #
-default[:zookeeper][:leader_is_also_server]  = 'no'
+default[:zookeeper][:leader_is_also_server]  = 'yes'
 
 #Sets the timeout value for opening connections for leader election notifications. 
 default[:zookeeper][:cnxTimeout] = 50
